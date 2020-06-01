@@ -1,0 +1,11 @@
+.promo{
+    max-width: 1300px;
+    margin: 0 auto;
+    background: rgba($color: #5dc4a59b, $alpha: .5);
+    height: 100px;
+    &__title{
+        padding: 30px;
+        font-size: 30px;
+        text-align: center;
+    }
+}
