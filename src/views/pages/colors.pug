@@ -1,0 +1,42 @@
+extends ../layouts/default
+
+block variables
+    - const title = "New Page";
+
+
+mixin ColorItem(color,title,sbtitle,txtcolor,ffamily)
+    .colors__item
+        .colors__item-img(style={ background: color})           
+        .colors__item-txt
+            .colors__item-txt-title(style={ color: txtcolor}) #{title}    
+            .colors__item-txt-subtitle(style={ color: txtcolor}) #{sbtitle}
+
+mixin ColorsFontItem(title,descr,fz)
+        .colors__font-item
+            .colors__font-item-title(style={ 'font-family':ffamily, 'font-size': fz})  #{title}  
+            .colors__font-item-descr(style={ 'font-family':ffamily,'font-size': fz})  #{descr}  
+
+block content
+    //include ../../blocks/modules/toxin-logo/toxin-logo.pug   
+    section.colors
+        img(src="../../img/svg/vector-2.svg", alt="").colors__logo
+        .colors__wrapper
+          +ColorItem('#1F2041','Dark Shade 100%', '#1F2041', '#1F2041')
+          +ColorItem('rgba(31, 32, 65, 0.75)','Dark Shade 75%', '#1F2041', '#1F2041')
+          +ColorItem('rgba(31, 32, 65, 0.5)','Dark Shade 50%', '#1F2041', '#1F2041')
+          +ColorItem('rgba(31, 32, 65, 0.25);','Dark Shade 25%', '#1F2041', '#1F2041')
+          +ColorItem('rgba(31, 32, 65, 0.05);','Dark Shade 5%', '#1F2041', '#1F2041')
+          +ColorItem('#BC9CFF','Purple', '#BC9CFF', '#1F2041')
+          +ColorItem('#6FCF97','Green', ' #6FCF97', '#1F2041')
+
+        .colors__font-wrapper
+            +ColorsFontItem('H1','This one is the sub-section or widget title','24px','Quicksand')
+            +ColorsFontItem('H2','Next one is the item title inside widgets','19px','Quicksand')
+            +ColorsFontItem('H3',' This is a label or CTA text','15px','Montserrat')
+            +ColorsFontItem('Body',' This is the body text which is used for most of the design, like paragraphs, lists, etc.','14px','Montserrat')
+            
+           
+          
+          
+
+block scripts
